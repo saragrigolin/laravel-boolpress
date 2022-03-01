@@ -40,4 +40,9 @@ class Post extends Model
 
         return (empty($newSlug)) ? $slug : $newSlug;
     }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }
