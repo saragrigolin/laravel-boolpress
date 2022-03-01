@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('guest.index');
 
 Auth::routes();
 
@@ -27,4 +27,12 @@ Route::middleware('auth')
         Route::get('/', 'HomeController@index')
             ->name('home');
         Route::resource('posts', 'PostController');
+        // Route::get('/posts', 'PostController@index')->name('posts.index');
+        // Route::get('/posts/create', 'PostController@create')->name('posts.create');
+        // Route::get('/posts/{slug}', 'PostController@show')->name('posts.show');
+        // Route::get('/posts/{slug}/edit', 'PostController@edit')->name('posts.edit');
+        // Route::patch('/posts/{slug}', 'PostController@update')->name('posts.update');
+        // Route::put('/posts/{slug}', 'PostController@update')->name('posts.update');
+        // Route::post('/posts', 'PostController@store')->name('posts.store');
+        // Route::delete('/posts/{slug}', 'PostController@destroy')->name('posts.destroy');
     });
