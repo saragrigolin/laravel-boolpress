@@ -22,13 +22,8 @@
                 @method('PATCH')
                 <div class="mb-3">
                     <select class="form-select" name="category_id">
-                        {{-- se la categoria scelta dall'utente precedentemente e' 
-                        identica a quella su cui sto girando inserisco
-                        l'attributo selected --}}
                         <option value="">Select a category</option>
                         @foreach ($categories as $category)
-                            {{-- <option {{ old('category_id') == $category->id ? 'selected' : '' }}
-                                value="{{ $category->id }}"> --}}
                             <option @if (old('category_id', $post->category_id) == $category->id) selected @endif value="{{ $category->id }}">
                                 {{ $category->name }} - {{ $category->id }}</option>
                         @endforeach
@@ -59,9 +54,6 @@
                         </div>
                     @enderror
                 </div>
-
-                {{-- <input type="hidden" name="user_id" id="user_id" value="{{ Auth::user()->id }}"> --}}
-
                 <input class="btn btn-primary" type="submit" value="Save">
             </form>
         </div>
