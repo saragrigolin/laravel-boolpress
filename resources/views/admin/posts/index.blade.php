@@ -32,6 +32,7 @@
                         <th scope="col">Title</th>
                         <th scope="col">Created At</th>
                         <th scope="col">Updated At</th>
+                        <th scope="col">Category</th>
                         <th colspan="3" scope="col">Actions</th>
                     </tr>
                 </thead>
@@ -42,6 +43,7 @@
                             <td class="text-capitalize">{{ $post->title }}</td>
                             <td>{{ $post->created_at }}</td>
                             <td>{{ $post->updated_at }}</td>
+                            <td>{{ $post->category()->first()->name }}</td>
                             <td><a class="btn btn-primary" href="{{ route('admin.posts.show', $post->slug) }}">View</a>
                             </td>
                             <td>
