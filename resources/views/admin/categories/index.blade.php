@@ -31,7 +31,7 @@
                     @foreach ($categories as $category)
                         <tr>
                             <td>{{ $category->id }}</td>
-                            <td>{{ $category->name }}</td>
+                            <td class="text-capitalize">{{ $category->name }}</td>
                             <td>{{ $category->created_at }}</td>
                             <td>{{ $category->updated_at }}</td>
                             <td><a class="btn btn-primary"
