@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Model\Category;
+use App\Model\Post;
 
 class CategoryController extends Controller
 {
@@ -15,7 +16,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::orderBy('name', 'desc')->paginate(20);
+        $categories = Category::orderBy('id', 'asc')->paginate(20);
 
         return view('admin.categories.index', ['categories' => $categories]);
     }
@@ -81,8 +82,16 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category, Post $posts)
     {
-        //
+        $category->delete();
+        $nullPosts = Post::whereNull('category_id')->get();
+
+        foreach ($nullPosts as $post){
+            $post->category_id = 1;
+            $post->update();
+        }
+
+        return redirect()->route('admin.categories.index')->with('status', "Category $category->name deleted");
     }
 }

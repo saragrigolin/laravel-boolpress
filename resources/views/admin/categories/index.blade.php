@@ -37,6 +37,20 @@
                             <td><a class="btn btn-primary"
                                     href="{{ route('admin.categories.show', $category->slug) }}">View</a>
                             </td>
+                            <td>
+                                @if ($category->name != 'generic')
+                                <a class="btn btn-info" href="{{ route('admin.categories.edit', $category->slug) }}">Modify</a>
+                                @endif
+                            </td>
+                            <td>
+                                @if ($category->name != 'generic')
+                                <form action="{{ route('admin.categories.destroy', $category) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input class="btn btn-danger" type="submit" value="Delete">
+                                </form>
+                                @endif
+                            </td>
                         </tr>
                     @endforeach
 
