@@ -19,6 +19,10 @@
                 <div>{{ $post->content }}</div>
                 <div class="mt-3"><span>Author: {{  $post->user()->first()->name }}</span></div>
                 <div><span>Category: {{  $post->category()->first()->name }}</span></div>
+                <div><span>Tags: 
+                @foreach ($post->tags()->get() as $tag)
+                    {{ $tag->name }}
+                @endforeach</span></div>
             </div>
         </div>
         <div class="row">

@@ -20,6 +20,10 @@ class TagSeeder extends Seeder
             'design',
             'food',
             'travel',
+            'lifestyle',
+            'motors',
+            'videogames',
+            'news'
         ];
 
         foreach ($tags as $tag){
