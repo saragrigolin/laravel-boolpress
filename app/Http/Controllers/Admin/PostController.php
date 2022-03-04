@@ -123,7 +123,8 @@ class PostController extends Controller
             [
                 'title' => 'required|max:240',
                 'content' => 'required',
-                'category_id' => 'exists:App\Model\Category,id'
+                'category_id' => 'exists:App\Model\Category,id',
+                'tags.*' => 'nullable|exists:App\Model\Tag,id'
             ]
         );
 
