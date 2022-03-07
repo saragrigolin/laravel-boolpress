@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <form action="{{route('admin.posts.store')}}" method="POST">
+                <form action="{{route('admin.posts.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('POST')
                 <div class="mb-3">
@@ -55,6 +55,15 @@
                     <textarea class="form-control" id="content" rows="3"
                         name="content">{{ old('content') }}</textarea>
                     @error('content')
+                        <div class="alert alert-danger">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image</label>
+                    <input class="form-control" type="file" id="image" name="image">
+                    @error('image')
                         <div class="alert alert-danger">
                             {{ $message }}
                         </div>

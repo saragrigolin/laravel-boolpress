@@ -20,9 +20,13 @@
                 <div class="mt-3"><span>Author: {{  $post->user()->first()->name }}</span></div>
                 <div><span>Category: {{  $post->category()->first()->name }}</span></div>
                 <div><span>Tags: 
-                @foreach ($post->tags()->get() as $tag)
-                    {{ $tag->name }}
-                @endforeach</span></div>
+                    @foreach ($post->tags()->get() as $tag)
+                        {{ $tag->name }}
+                    @endforeach</span>
+                </div>
+            </div>
+            <div class="col">
+                <img class="img-fluid" src="{{ asset('storage/' . $post->image)}}" alt="{{ $post->title }}">
             </div>
         </div>
         <div class="row">
