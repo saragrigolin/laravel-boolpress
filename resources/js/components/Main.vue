@@ -47,9 +47,9 @@ import Axios from "axios"
             getPosts(url){
                 Axios.get(url).then(
                     (result) => {
-                    this.posts = result.data.results.posts.data;
-                    this.next_page_url = result.data.results.posts.next_page_url;
-                    this.prev_page_url = result.data.results.posts.prev_page_url;
+                    this.posts = result.data.results.data;
+                    this.next_page_url = result.data.results.next_page_url;
+                    this.prev_page_url = result.data.results.prev_page_url;
                     });
             }
             
