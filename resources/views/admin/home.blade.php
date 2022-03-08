@@ -2,6 +2,9 @@
 @section('documentTitle')
     Home
 @endsection
+@section('script')
+    <script src="{{ asset('js/admin.js') }}" defer></script>
+@endsection
 @section('content')
     <div class="container">
         <div class="row">

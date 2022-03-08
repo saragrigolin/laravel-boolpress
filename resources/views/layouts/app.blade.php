@@ -8,8 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
+    @yield('script')
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -19,9 +18,8 @@
     <title>@yield('documentTitle')</title>
 </head>
 <body>
+    @include('partials.header')
     <div id="app">
-        @include('partials.header')
-
         <main class="py-4">
             @yield('content')
         </main>

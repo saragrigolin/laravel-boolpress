@@ -154,8 +154,6 @@ class PostController extends Controller
             $post->category_id = $data['category_id'];
         }
 
-
-
         $post->update();
 
         if (!empty($data['tags'])) {
