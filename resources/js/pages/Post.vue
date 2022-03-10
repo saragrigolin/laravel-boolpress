@@ -10,7 +10,8 @@
                         <p class="card-text">{{ post.content }}</p>
                     </div>
                 </div>
-                <router-link class="btn btn-info mt-2" :to="{ name: 'posts' }">Go back</router-link>
+                <router-link class="btn btn-info mt-2" :to="{ name: 'home' }">Torna alla home</router-link>
+                <router-link class="btn btn-info mt-2" :to="{ name: 'posts' }">Torna ai post</router-link>
             </div>
         </div>
     </div>
