@@ -25,11 +25,11 @@ export default {
     props: ['id'],
     data(){
         return {
-            post: null
+            post: [],
         }
     },
     created(){
-        const url = 'http://127.0.0.1:8001/api/v1/posts/' + this.id;
+        const url = 'http://127.0.0.1:8000/api/v1/posts/' + this.id;
         this.getPost(url);
     },
     methods: {
